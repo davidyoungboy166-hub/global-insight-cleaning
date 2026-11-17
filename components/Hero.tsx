@@ -88,24 +88,33 @@ export default function Hero({ onOpenBooking }: HeroProps) {
     <section className="relative overflow-hidden pt-4 pb-16 lg:pt-8 lg:pb-24 bg-gradient-to-b from-white via-[#F4F8FD] to-[#E6F0FA]">
       {/* 1. Real-Time Live Dispatch Alert Bar (Top of Hero) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-        <div className="bg-[#0A192F] text-white px-4 py-2.5 rounded-2xl shadow-lg border border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs gap-2">
-          <div className="flex items-center space-x-2.5">
-            <span className="relative flex h-2.5 w-2.5">
+        <div className="w-full bg-[#0A192F] text-white px-3.5 py-2.5 sm:px-4 sm:py-2.5 rounded-2xl shadow-lg border border-slate-800 flex flex-col md:flex-row md:items-center md:justify-between text-xs gap-2 sm:gap-2.5 overflow-hidden">
+          {/* Main Alert Message */}
+          <div className="flex items-start sm:items-center gap-2 sm:gap-2.5 min-w-0">
+            <span className="relative flex h-2.5 w-2.5 mt-0.5 sm:mt-0 flex-shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
             </span>
-            <span className="font-extrabold text-[#38BDF8] tracking-wider uppercase text-[10px]">
-              Live Dispatch Alert:
-            </span>
-            <span className="text-slate-300 truncate">
-              Mobile specialist teams active today across <strong>East Legon, Cantonments, Airport &amp; Spintex</strong>
-            </span>
+            <div className="min-w-0 flex-1 leading-snug text-[11px] sm:text-xs">
+              <span className="font-extrabold text-[#38BDF8] tracking-wider uppercase text-[10px] sm:text-[11px] mr-1.5 inline-block">
+                Live Dispatch:
+              </span>
+              <span className="text-slate-300">
+                Teams active today across <strong className="text-white font-semibold">East Legon, Cantonments, Airport &amp; Spintex</strong>
+              </span>
+            </div>
           </div>
 
-          <div className="flex items-center space-x-3 text-[11px] text-slate-300">
-            <span className="hidden md:inline">⚡ Same-Week Slots Available</span>
-            <span className="hidden md:inline text-slate-600">•</span>
-            <span className="text-amber-400 font-bold">MTN MoMo: 849201</span>
+          {/* Trust Highlights & MoMo */}
+          <div className="flex items-center justify-between md:justify-end gap-2.5 text-[10px] sm:text-[11px] text-slate-300 border-t border-slate-800/80 md:border-t-0 pt-2 md:pt-0 flex-shrink-0">
+            <span className="text-slate-400 flex items-center gap-1">
+              <span>⚡</span>
+              <span>Same-Week Slots</span>
+            </span>
+            <span className="text-slate-600 hidden md:inline">•</span>
+            <span className="text-amber-400 font-bold bg-amber-400/10 px-2 py-0.5 rounded-md border border-amber-400/20">
+              MTN MoMo: 849201
+            </span>
           </div>
         </div>
       </div>
@@ -126,9 +135,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             className="lg:col-span-7 space-y-6 text-center lg:text-left"
           >
             {/* Trust Pill Badge with Ghana Flag */}
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white border border-blue-200/90 shadow-xs text-xs font-bold text-[#0066CC]">
+            <div className="inline-flex items-center justify-center text-center max-w-full space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white border border-blue-200/90 shadow-xs text-[11px] sm:text-xs font-bold text-[#0066CC]">
               <span className="text-base leading-none">🇬🇭</span>
-              <span>Accra&apos;s Trusted Commercial &amp; Home Cleaning Firm</span>
+              <span className="truncate">Accra&apos;s Trusted Commercial &amp; Home Cleaning Firm</span>
               <span className="text-slate-300 hidden sm:inline">•</span>
               <span className="text-slate-600 font-semibold hidden sm:inline">100% Guaranteed</span>
             </div>
