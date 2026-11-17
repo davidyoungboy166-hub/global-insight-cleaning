@@ -1,0 +1,50 @@
+[
+  {
+    "customerName": "David Eli Akorli",
+    "phone": "0209734343",
+    "email": "davidyoungboy166@gmail.com",
+    "serviceType": "Move-In & Move-Out Cleaning",
+    "propertySize": "3-4 Bedroom",
+    "preferredDate": "2026-11-18",
+    "timeSlot": "Morning (8:00 AM - 12:00 PM)",
+    "address": "Adenta , Airport Residential, Accra",
+    "notes": "Office",
+    "estimatedPrice": "GH₵ 910 - 1138",
+    "frequency": "One-Time Service",
+    "addOns": [],
+    "id": "GI-25861",
+    "status": "PENDING",
+    "createdAt": "2026-11-17T20:55:57.398Z"
+  },
+  {
+    "id": "GI-84925",
+    "customerName": "Nathaniel Odoom",
+    "phone": "027 765 4321",
+    "email": "nodoom@airbnb-accra.com",
+    "serviceType": "Airbnb & Short-Let Turnover Cleaning",
+    "propertySize": "1-2 Bedroom",
+    "preferredDate": "2026-11-21",
+    "timeSlot": "Midday (11:00 AM - 2:00 PM)",
+    "address": "Embassy Gardens, Block C, Room 204, Cantonments",
+    "notes": "Guest checkout at 11am, next check-in at 3pm. Fresh linens required.",
+    "estimatedPrice": "GH₵ 350 - 440",
+    "status": "PENDING",
+    "createdAt": "2026-11-16T11:50:00.000Z"
+  },
+  {
+    "id": "GI-84923",
+    "customerName": "Dr. Kwesi Mensah",
+    "phone": "020 811 4452",
+    "email": "kmensah.med@yahoo.com",
+    "serviceType": "Move-In & Move-Out Cleaning",
+    "propertySize": "1-2 Bedroom",
+    "preferredDate": "2026-11-20",
+    "timeSlot": "Afternoon (1:00 PM - 5:00 PM)",
+    "address": "Mirage Residence, Flat 4B, Airport Residential, Accra",
+    "notes": "Move-in sanitization. All kitchen appliances and bedroom wardrobes must be steam cleaned.",
+    "estimatedPrice": "GH₵ 650 - 810",
+    "status": "COMPLETED",
+    "createdAt": "2026-11-16T10:45:00.000Z",
+    "updatedAt": "2026-11-17T22:11:43.047Z"
+  }
+]
