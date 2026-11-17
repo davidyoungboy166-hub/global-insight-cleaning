@@ -22,7 +22,9 @@ export interface Booking {
   updatedAt?: string;
 }
 
-const DATA_DIR = path.join(process.cwd(), "data");
+const IS_VERCEL = Boolean(process.env.VERCEL);
+const BUNDLED_DATA_FILE = path.join(process.cwd(), "data", "bookings.json");
+const DATA_DIR = IS_VERCEL ? path.join("/tmp", "data") : path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "bookings.json");
 
 // Initial seed data representing real Accra scenarios
@@ -108,11 +110,24 @@ const initialSeedBookings: Booking[] = [
 
 // Ensure directory and data file exist
 function ensureDataFile() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(initialSeedBookings, null, 2), "utf8");
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(DATA_FILE)) {
+      if (IS_VERCEL && fs.existsSync(BUNDLED_DATA_FILE)) {
+        try {
+          const bundledContent = fs.readFileSync(BUNDLED_DATA_FILE, "utf8");
+          fs.writeFileSync(DATA_FILE, bundledContent, "utf8");
+          return;
+        } catch {
+          // Fall through to seed bookings
+        }
+      }
+      fs.writeFileSync(DATA_FILE, JSON.stringify(initialSeedBookings, null, 2), "utf8");
+    }
+  } catch (err) {
+    console.error("Error ensuring data file:", err);
   }
 }
 
